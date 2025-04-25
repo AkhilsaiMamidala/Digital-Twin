@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>The Human Body</title>
+    <link rel="stylesheet" href="public/index.css">
+    <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@v0.163.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@v0.163.0/examples/jsm/"
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="heading">
+        <h1>THE HUMAN BODY</h1>
+        <div class="border"></div>
+    </div>
+    <div id="progress-container">
+        <div id="progress">Engaging Hyperdrive...</div>
+    </div>
+
+    <!-- Data Containers for Sensor Values -->
+    <div class="data-container" id="blood-pressure-container">
+        <i class="bx bx-heart" style="font-size: 2em; color: #48a14d;"></i>
+        <h3>Blood Pressure</h3>
+        <p id="blood-pressure">-- mmHg</p>
+    </div>
+    <div class="data-container" id="oxygen-saturation-container">
+        <i class="bx bx-cloud" style="font-size: 2em; color: #48a14d;"></i>
+        <h3>Oxygen Saturation</h3>
+        <p id="oxygen-saturation">-- %</p>
+    </div>
+    <div class="data-container" id="heart-rate-container">
+        <i class="bx bx-heartbeat" style="font-size: 2em; color: #48a14d;"></i>
+        <h3>Heart Rate</h3>
+        <p id="heart-rate">-- bpm</p>
+    </div>
+    <div class="data-container" id="glucose-container">
+        <i class="bx bx-medical" style="font-size: 2em; color: #48a14d;"></i>
+        <h3>Glucose</h3>
+        <p id="glucose">-- mg/dL</p>
+    </div>
+
+    <!-- AI Recommendations Section -->
+    <div class="data-container" id="ai-recommendation-container">
+        <h3>AI Recommendations</h3>
+        <button id="get-recommendation-btn" class="recommendation-btn responsive-btn">
+            <i class='bx bx-bulb'></i> Get Recommendations
+        </button>
+        <div id="recommendation-message" style="margin-top: 20px;">
+            <!-- AI recommendations will be dynamically loaded here -->
+            <p id="ai-string-read">Awaiting AI recommendation...</p>
+        </div>
+
+        <!-- Recommendations List (Scrollable) -->
+        <div class="recommendation-container">
+            <ul id="recommendations-list" class="recommendations-list">
+                <!-- AI recommendations will be dynamically loaded here -->
+            </ul>
+        </div>
+    </div>
+
+    <script type="module" src="./main.js"></script>
+</body>
+</html>
